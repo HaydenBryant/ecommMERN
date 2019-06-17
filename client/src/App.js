@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom"
-import Navbar from "./components/Navbar";
-import M from 'materialize-css';
+import Example from "./components/Navbar";
 
 import Post from "./components/Post";
 
@@ -11,7 +10,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App" >
-          <Navbar />
+          <Example />
           <div className="container">
             <Route exact path="/post" component={Post} />
           </div>
