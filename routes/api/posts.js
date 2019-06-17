@@ -8,12 +8,12 @@ const jsonParser = bodyParser.json();
 const post = require("../../models/Post.js")
 
 //validations
-
+const validatePostInput = require("../../validations/post.js");
 
 // @route    GET /api/posts/test
 // @desc     tests get route
 // @access   public
-router.get("/testing", (req, res) => {res.send("Hey tom, it's Maddie")
+router.get("/testing", (req, res) => {res.send("Hello")
 })
 
 router.post('/', jsonParser, (req, res) => {
@@ -22,18 +22,18 @@ router.post('/', jsonParser, (req, res) => {
         email: req.body.email,
         date: req.body.date,
         stick: {
-            brand: req.body.stick.brand,
-            material: req.body.stick.material,
-            model: req.body.stick.model,
-            ageGroup: req.body.stick.ageGroup,
-            hand: req.body.stick.hand,
-            length: req.body.stick.length,
-            curve: req.body.stick.curve,
-            pattern: req.body.stick.pattern,
-            color: req.body.stick.color,
-            condition: req.body.stick.condition,
-            description: req.body.stick.description,
-            price: req.body.stick.price
+            brand: req.stick.brand,
+            material: req.stick.material,
+            model: req.stick.model,
+            ageGroup: req.stick.ageGroup,
+            hand: req.stick.hand,
+            length: req.stick.length,
+            curve: req.stick.curve,
+            pattern: req.stick.pattern,
+            color: req.stick.color,
+            condition: req.stick.condition,
+            description: req.stick.description,
+            price: req.stick.price
         }
     })
 
